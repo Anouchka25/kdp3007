@@ -1,0 +1,56 @@
+{
+  "packageId": "com.kundapay.twa",
+  "host": "kundapay.com",
+  "name": "KundaPay - Le transfert en toute confiance",
+  "launcherName": "KundaPay",
+  "display": "standalone",
+  "themeColor": "#D97706",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#FFFFFF",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://kundapay.com/KundaPay.png",
+  "maskableIconUrl": "https://kundapay.com/KundaPay.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "C:\\Users\\Anouchka MINKOUE OBA\\Downloads\\project-bolt-github-mdl7tjqd-dmc2rgak (9)\\project\\android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Faire un transfert",
+      "shortName": "Transfert",
+      "url": "https://kundapay.com/transfer",
+      "chosenIconUrl": "https://kundapay.com/KundaPay.png"
+    },
+    {
+      "name": "Mon profil",
+      "shortName": "Profil",
+      "url": "https://kundapay.com/profile",
+      "chosenIconUrl": "https://kundapay.com/KundaPay.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://kundapay.com/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://kundapay.com/",
+  "minSdkVersion": 21,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}
