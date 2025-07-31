@@ -15,7 +15,7 @@ const TopTransferFlows = () => {
         flag: 'https://flagcdn.com/ga.svg',
         currency: 'XAF'
       },
-      amount: 73000,
+      amount: 82000,
       currency: 'EUR'
     },
     {
@@ -29,7 +29,7 @@ const TopTransferFlows = () => {
         flag: 'https://flagcdn.com/fr.svg',
         currency: 'EUR'
       },
-      amount: 42000000,
+      amount: 50000000,
       currency: 'XAF'
     }
   ];
@@ -45,7 +45,7 @@ const TopTransferFlows = () => {
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez les volumes de transfert les plus importants traités par KundaPay depuis 5 mois seulement
+            Découvrez les volumes de transfert les plus importants traités par KundaPay depuis 6 mois seulement
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const TopTransferFlows = () => {
                   {formatCurrency(flow.amount, flow.currency)} {flow.currency}
                 </div>
                 <p className="text-gray-500 text-sm">
-                  Volume total transféré en 5 mois
+                  Volume total transféré en 6 mois
                 </p>
               </div>
 

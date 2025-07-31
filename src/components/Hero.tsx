@@ -12,7 +12,7 @@ const Hero = () => {
                 <span className="block text-yellow-500">Le transfert en toute confiance </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Transférez de l'argent facilement entre le Gabon, l'Europe, la Chine, USA avec KundaPay. Profitez de frais compétitifs et d'une expérience utilisateur optimisée.
+                Transférez de l'argent facilement entre le Gabon, Sénégal, Maroc, Europe, la Chine, USA avec KundaPay. Profitez de frais compétitifs et d'une expérience utilisateur optimisée.
               </p>
             </div>
 
@@ -35,7 +35,7 @@ const Hero = () => {
     </div>
                 <div className="bg-yellow-50 rounded-lg p-4 text-center">
                   <p className="text-lg font-medium">
-                    1 EUR = 7,51 CNY
+                    1 EUR = 8,1307 CNY
                   </p>
                 </div>
                 <div className="bg-yellow-50 rounded-lg p-4 text-center">
@@ -46,6 +46,16 @@ const Hero = () => {
                 <div className="bg-yellow-50 rounded-lg p-4 text-center">
                   <p className="text-lg font-medium">
                     1 EUR = 1,08 USD
+                  </p>
+                </div>
+                <div className="bg-yellow-50 rounded-lg p-4 text-center">
+                  <p className="text-lg font-medium">
+                    1 EUR = 10,75 MAD
+                  </p>
+                </div>
+                <div className="bg-yellow-50 rounded-lg p-4 text-center">
+                  <p className="text-lg font-medium">
+                    1 EUR = 655,96 XOF
                   </p>
                 </div>
               </div>

@@ -1,9 +1,9 @@
 // Currency codes
-export type CountryCode = 'GA' | 'FR' | 'BE' | 'DE' | 'CH' | 'GB' | 'ES' | 'IT' | 'NL'| 'US' | 'CA'| 'CN';
-type CurrencyCode = 'XAF' | 'EUR' | 'CNY' | 'USD' | 'CAD' | 'CHF' | 'GBP' | 'BTC';
-export type PaymentMethod = 'AIRTEL_MONEY' | 'MOOV_MONEY' | 'CASH' | 'BANK_TRANSFER' | 'ALIPAY' | 'CARD' | 'ACH' | 'PAYPAL' | 'WERO' | 'BITCOIN';
-export type ReceivingMethod = 'AIRTEL_MONEY' | 'MOOV_MONEY' | 'CASH' | 'BANK_TRANSFER' | 'ALIPAY' | 'CARD' | 'ACH' | 'VISA_DIRECT' | 'MASTERCARD_SEND' | 'WERO' | 'BITCOIN';
-export type TransferDirection = 'GABON_TO_CHINA' | 'FRANCE_TO_GABON' | 'GABON_TO_FRANCE' | 'USA_TO_GABON' | 'GABON_TO_USA' | 'CANADA_TO_GABON' | 'GABON_TO_CANADA' | 'BELGIUM_TO_GABON' | 'GABON_TO_BELGIUM' | 'GERMANY_TO_GABON' | 'GABON_TO_GERMANY' | 'SWITZERLAND_TO_GABON' | 'GABON_TO_SWITZERLAND' | 'UK_TO_GABON' | 'GABON_TO_UK' | 'SPAIN_TO_GABON' | 'GABON_TO_SPAIN' | 'ITALY_TO_GABON' | 'GABON_TO_ITALY' | 'NETHERLANDS_TO_GABON' | 'GABON_TO_NETHERLANDS';
+export type CountryCode = 'GA' | 'FR' | 'BE' | 'DE' | 'CH' | 'GB' | 'ES' | 'IT' | 'NL'| 'US' | 'CA'| 'CN' | 'MA' | 'SN';
+type CurrencyCode = 'XAF' | 'EUR' | 'CNY' | 'USD' | 'CAD' | 'CHF' | 'GBP' | 'BTC' | 'MAD' | 'XOF';
+export type PaymentMethod = 'AIRTEL_MONEY' | 'MOOV_MONEY' | 'CASH' | 'BANK_TRANSFER' | 'ALIPAY' | 'CARD' | 'ACH' | 'PAYPAL' | 'WERO' | 'BITCOIN' | 'ORANGE_MONEY' | 'WAVE';
+export type ReceivingMethod = 'AIRTEL_MONEY' | 'MOOV_MONEY' | 'CASH' | 'BANK_TRANSFER' | 'ALIPAY' | 'CARD' | 'ACH' | 'VISA_DIRECT' | 'MASTERCARD_SEND' | 'WERO' | 'BITCOIN' | 'ORANGE_MONEY' | 'WAVE';
+export type TransferDirection = 'GABON_TO_CHINA' | 'FRANCE_TO_GABON' | 'GABON_TO_FRANCE' | 'USA_TO_GABON' | 'GABON_TO_USA' | 'CANADA_TO_GABON' | 'GABON_TO_CANADA' | 'BELGIUM_TO_GABON' | 'GABON_TO_BELGIUM' | 'GERMANY_TO_GABON' | 'GABON_TO_GERMANY' | 'SWITZERLAND_TO_GABON' | 'GABON_TO_SWITZERLAND' | 'UK_TO_GABON' | 'GABON_TO_UK' | 'SPAIN_TO_GABON' | 'GABON_TO_SPAIN' | 'ITALY_TO_GABON' | 'GABON_TO_ITALY' | 'NETHERLANDS_TO_GABON' | 'GABON_TO_NETHERLANDS' | 'FRANCE_TO_MOROCCO' | 'MOROCCO_TO_FRANCE' | 'FRANCE_TO_SENEGAL' | 'SENEGAL_TO_FRANCE' | 'GABON_TO_MOROCCO' | 'MOROCCO_TO_GABON' | 'MOROCCO_TO_SENEGAL' | 'SENEGAL_TO_MOROCCO';
 
 // Country information with proper flag URLs
 export const COUNTRIES: Record<CountryCode, { name: string; currency: CurrencyCode; flag: string }> = {
@@ -67,6 +67,16 @@ export const COUNTRIES: Record<CountryCode, { name: string; currency: CurrencyCo
     currency: 'CNY',
     flag: 'https://flagcdn.com/cn.svg'
   },
+  MA: {
+    name: 'Maroc',
+    currency: 'MAD',
+    flag: 'https://flagcdn.com/ma.svg'
+  },
+  SN: {
+    name: 'Sénégal',
+    currency: 'XOF',
+    flag: 'https://flagcdn.com/sn.svg'
+  },
 };
 
 // Loyalty Points Constants
@@ -98,7 +108,9 @@ const PAYMENT_METHODS: Record<PaymentMethod, string> = {
   CARD: 'Carte bancaire',
   ACH: 'Virement ACH',
   PAYPAL: 'PayPal',
-  BITCOIN: 'Bitcoin'
+  BITCOIN: 'Bitcoin',
+  ORANGE_MONEY: 'Orange Money',
+  WAVE: 'Wave'
 };
 
 // Receiving method names
@@ -113,5 +125,7 @@ const RECEIVING_METHODS: Record<ReceivingMethod, string> = {
   VISA_DIRECT: 'Visa Direct',
   MASTERCARD_SEND: 'Mastercard Send',
   WERO: 'Wero',
-  BITCOIN: 'Bitcoin'
+  BITCOIN: 'Bitcoin',
+  ORANGE_MONEY: 'Orange Money',
+  WAVE: 'Wave'
 };

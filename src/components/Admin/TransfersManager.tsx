@@ -276,7 +276,9 @@ const TransfersManager = () => {
       'WERO': 'Wero',
       'VISA_DIRECT': 'Visa Direct',
       'MASTERCARD_SEND': 'Mastercard Send',
-      'INTERAC': 'Interac'
+      'INTERAC': 'Interac',
+      'ORANGE_MONEY': 'Orange Money',
+      'WAVE': 'Wave'
     };
     return methods[method] || method;
   };
@@ -329,7 +331,15 @@ const TransfersManager = () => {
       'ITALY_TO_GABON': 'Italie → Gabon',
       'GABON_TO_ITALY': 'Gabon → Italie',
       'NETHERLANDS_TO_GABON': 'Pays-Bas → Gabon',
-      'GABON_TO_NETHERLANDS': 'Gabon → Pays-Bas'
+      'GABON_TO_NETHERLANDS': 'Gabon → Pays-Bas',
+      'FRANCE_TO_MOROCCO': 'France → Maroc',
+      'MOROCCO_TO_FRANCE': 'Maroc → France',
+      'FRANCE_TO_SENEGAL': 'France → Sénégal',
+      'SENEGAL_TO_FRANCE': 'Sénégal → France',
+      'GABON_TO_MOROCCO': 'Gabon → Maroc',
+      'MOROCCO_TO_GABON': 'Maroc → Gabon',
+      'MOROCCO_TO_SENEGAL': 'Maroc → Sénégal',
+      'SENEGAL_TO_MOROCCO': 'Sénégal → Maroc'
     };
     return directions[direction] || direction;
   };
@@ -479,6 +489,14 @@ Mode de paiement : ${getPaymentMethodDisplay(transfer.payment_method)}`;
               <option value="GABON_TO_ITALY">Gabon → Italie</option>
               <option value="NETHERLANDS_TO_GABON">Pays-Bas → Gabon</option>
               <option value="GABON_TO_NETHERLANDS">Gabon → Pays-Bas</option>
+              <option value="FRANCE_TO_MOROCCO">France → Maroc</option>
+              <option value="MOROCCO_TO_FRANCE">Maroc → France</option>
+              <option value="FRANCE_TO_SENEGAL">France → Sénégal</option>
+              <option value="SENEGAL_TO_FRANCE">Sénégal → France</option>
+              <option value="GABON_TO_MOROCCO">Gabon → Maroc</option>
+              <option value="MOROCCO_TO_GABON">Maroc → Gabon</option>
+              <option value="MOROCCO_TO_SENEGAL">Maroc → Sénégal</option>
+              <option value="SENEGAL_TO_MOROCCO">Sénégal → Maroc</option>
             </select>
           </div>
 

@@ -579,6 +579,8 @@ const AuthForm = () => {
                     >
                       <option value="">Sélectionner un pays</option>
                       <option value="GA">Gabon</option>
+                      <option value="GA">Sénégal</option>
+                      <option value="GA">Maroc</option>
                       <option value="FR">France</option>
                       <option value="BE">Belgique</option>
                       <option value="DE">Allemagne</option>

@@ -9,8 +9,8 @@ import LoyaltyPointsDisplay from '../components/LoyaltyPointsDisplay';
 
 
 const TRANSFER_ROUTES: Record<CountryCode, CountryCode[]> = {
-  GA: ['FR', 'BE', 'DE', 'CH', 'GB', 'ES', 'IT', 'NL', 'CN', 'US', 'CA'],
-  FR: ['GA'],
+  GA: ['FR', 'BE', 'DE', 'CH', 'GB', 'ES', 'IT', 'NL', 'CN', 'US', 'CA', 'MA', 'SN'],
+  FR: ['GA', 'MA', 'SN'],
   BE: ['GA'],
   DE: ['GA'],
   CH: ['GA'],
@@ -20,7 +20,9 @@ const TRANSFER_ROUTES: Record<CountryCode, CountryCode[]> = {
   NL: ['GA'],
   US: ['GA'],
   CA: ['GA'],
-  CN: [] 
+  CN: [],
+  MA: ['FR', 'GA', 'SN'],
+  SN: ['FR', 'MA', 'GA']
 };
 
 const PAYMENT_METHODS = {
@@ -68,6 +70,14 @@ const PAYMENT_METHODS = {
     'CA': [
       { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
       { value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' }
+    ],
+    'MA': [
+      { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
+      { value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' }
+    ],
+    'SN': [
+      { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
+      { value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' }
     ]
   },
   'FR': {
@@ -77,6 +87,18 @@ const PAYMENT_METHODS = {
       { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' },
       { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
      // { value: 'BITCOIN', label: 'Bitcoin', icon: '/bitcoin.png' }
+    ],
+    'MA': [
+      { value: 'CARD', label: 'Carte Bancaire', icon: '/cb.png' },
+      { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
+      { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' },
+      { value: 'WERO', label: 'Wero ou PayLib', icon: '/wero.png' }
+    ],
+    'SN': [
+      { value: 'CARD', label: 'Carte Bancaire', icon: '/cb.png' },
+      { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
+      { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' },
+      { value: 'WERO', label: 'Wero ou PayLib', icon: '/wero.png' }
     ]
   },
   'BE': {
@@ -154,6 +176,28 @@ const PAYMENT_METHODS = {
       { value: 'MASTERCARD_SEND', label: 'Mastercard Send', icon: '/cb.png' },
       //{ value: 'BITCOIN', label: 'Bitcoin', icon: '/bitcoin.png' }
     ]
+  },
+  'MA': {
+    'FR': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ],
+    'GA': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ],
+    'SN': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ]
+  },
+  'SN': {
+    'FR': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ],
+    'MA': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ],
+    'GA': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ]
   }
 };
 
@@ -208,6 +252,14 @@ const RECEIVING_METHODS = {
       { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
       //{ value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' },
       //{ value: 'BITCOIN', label: 'Bitcoin', icon: '/bitcoin.png' }
+    ],
+    'MA': [
+      { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
+      //{ value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' }
+    ],
+    'SN': [
+      { value: 'AIRTEL_MONEY', label: 'Airtel Money', icon: '/airtel-money.png' },
+      //{ value: 'MOOV_MONEY', label: 'Moov Money', icon: '/moov-money.png' }
     ]
   },
   'FR': {
@@ -216,6 +268,16 @@ const RECEIVING_METHODS = {
       { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
       { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' },
       //{ value: 'BITCOIN', label: 'Bitcoin', icon: '/bitcoin.png' }
+    ],
+    'MA': [
+      { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
+      { value: 'WERO', label: 'Wero ou PayLib', icon: '/wero.png' },
+      { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' }
+    ],
+    'SN': [
+      { value: 'BANK_TRANSFER', label: 'Virement bancaire', icon: '/virement-bancaire.jpg' },
+      { value: 'WERO', label: 'Wero ou PayLib', icon: '/wero.png' },
+      { value: 'PAYPAL', label: 'PayPal', icon: '/paypal.png' }
     ]
   },
   'BE': {
@@ -287,6 +349,28 @@ const RECEIVING_METHODS = {
       { value: 'MASTERCARD_SEND', label: 'Mastercard Send', icon: '/cb.png' },
       //{ value: 'BITCOIN', label: 'Bitcoin', icon: '/bitcoin.png' }
     ]
+  },
+  'MA': {
+    'FR': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ],
+    'GA': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ],
+    'SN': [
+      { value: 'ORANGE_MONEY', label: 'Orange Money', icon: '/orange-money.png' }
+    ]
+  },
+  'SN': {
+    'FR': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ],
+    'GA': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ],
+    'MA': [
+      { value: 'WAVE', label: 'Wave', icon: '/wave.png' }
+    ],
   }
 };
 
@@ -315,7 +399,9 @@ const getDirectionFromCountries = (fromCountry: string, toCountry: string): stri
     'NL': 'NETHERLANDS',
     'CN': 'CHINA',
     'US': 'USA',
-    'CA': 'CANADA'
+    'CA': 'CANADA',
+    'MA': 'MOROCCO',
+    'SN': 'SENEGAL'
   };
 
   return `${countryNameMap[fromCountry]}_TO_${countryNameMap[toCountry]}`;
@@ -423,7 +509,8 @@ const TransferSimulator = () => {
           }
         }
 
-        if (toCountry === 'GA' && activeField === 'send') {
+    
+        {/* if (toCountry === 'GA' && activeField === 'send') {
           const amountNum = Number(amount);
           if (amountNum >= 1000) {
             setSuggestedPromoCode('WELCOME75');
@@ -434,7 +521,7 @@ const TransferSimulator = () => {
           }
         } else {
           setSuggestedPromoCode(null);
-        }
+        } */}
 
         const result = await calculateTransferDetails(
           Number(amount),

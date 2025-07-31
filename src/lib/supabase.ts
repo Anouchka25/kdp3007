@@ -46,6 +46,26 @@ const DEFAULT_EXCHANGE_RATES = [
   { from_currency: 'EUR', to_currency: 'XAF', rate: 655.96 },
   { from_currency: 'XAF', to_currency: 'EUR', rate: 0.001524 },  // 1/655.96
 
+  // EUR <-> XOF (Sénégal - fixed rate, same as XAF)
+  { from_currency: 'EUR', to_currency: 'XOF', rate: 655.96 },
+  { from_currency: 'XOF', to_currency: 'EUR', rate: 0.001524 },  // 1/655.96
+
+  // EUR <-> MAD (Maroc - floating rate)
+  { from_currency: 'EUR', to_currency: 'MAD', rate: 10.75 },
+  { from_currency: 'MAD', to_currency: 'EUR', rate: 0.093023 },  // 1/10.75
+
+  // XAF <-> XOF (parity via EUR)
+  { from_currency: 'XAF', to_currency: 'XOF', rate: 1.0000 },
+  { from_currency: 'XOF', to_currency: 'XAF', rate: 1.0000 },
+
+  // XAF <-> MAD (via EUR)
+  { from_currency: 'XAF', to_currency: 'MAD', rate: 0.016393 },  // (1/655.96) * 10.75
+  { from_currency: 'MAD', to_currency: 'XAF', rate: 61.01953 },   // (1/10.75) * 655.96
+
+  // XOF <-> MAD (via EUR)
+  { from_currency: 'XOF', to_currency: 'MAD', rate: 0.016393 },  // (1/655.96) * 10.75
+  { from_currency: 'MAD', to_currency: 'XAF', rate: 61.01953 },   // (1/10.75) * 655.96
+
   // EUR <-> CNY
   { from_currency: 'EUR', to_currency: 'CNY', rate: 7.5099 },
   { from_currency: 'CNY', to_currency: 'EUR', rate: 0.133157 },  // 1/7.5099
@@ -57,7 +77,7 @@ const DEFAULT_EXCHANGE_RATES = [
 
 // Default transfer fees with exact values
 export const DEFAULT_TRANSFER_FEES = [
-  // France -> Gabon (tous à 0.5%)
+  // France -> Gabon (tous à 0.6%)
   { from_country: 'FR', to_country: 'GA', payment_method: 'BANK_TRANSFER', receiving_method: 'AIRTEL_MONEY', fee_percentage: 0.006 },
   { from_country: 'FR', to_country: 'GA', payment_method: 'BANK_TRANSFER', receiving_method: 'CASH',         fee_percentage: 0.006 },
   { from_country: 'FR', to_country: 'GA', payment_method: 'WERO',          receiving_method: 'AIRTEL_MONEY', fee_percentage: 0.006 },
@@ -138,6 +158,44 @@ export const DEFAULT_TRANSFER_FEES = [
   { from_country: 'NL', to_country: 'GA', payment_method: 'PAYPAL',        receiving_method: 'CASH',         fee_percentage: 0.006 },
 
 
+  // France → Maroc
+  { from_country: 'FR', to_country: 'MA', payment_method: 'CARD',          receiving_method: 'ORANGE_MONEY', fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'MA', payment_method: 'BANK_TRANSFER', receiving_method: 'ORANGE_MONEY', fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'MA', payment_method: 'PAYPAL',        receiving_method: 'ORANGE_MONEY', fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'MA', payment_method: 'WERO',          receiving_method: 'ORANGE_MONEY', fee_percentage: 0.009 },
+
+  // France → Sénégal
+  { from_country: 'FR', to_country: 'SN', payment_method: 'CARD',          receiving_method: 'WAVE',         fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'SN', payment_method: 'BANK_TRANSFER', receiving_method: 'WAVE',         fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'SN', payment_method: 'PAYPAL',        receiving_method: 'WAVE',         fee_percentage: 0.009 },
+  { from_country: 'FR', to_country: 'SN', payment_method: 'WERO',          receiving_method: 'WAVE',         fee_percentage: 0.009 },
+
+  // Gabon → Maroc
+  { from_country: 'GA', to_country: 'MA', payment_method: 'AIRTEL_MONEY',  receiving_method: 'ORANGE_MONEY', fee_percentage: 0.09 },
+  { from_country: 'GA', to_country: 'MA', payment_method: 'MOOV_MONEY',    receiving_method: 'ORANGE_MONEY', fee_percentage: 0.09 },
+  { from_country: 'GA', to_country: 'MA', payment_method: 'CASH',          receiving_method: 'ORANGE_MONEY', fee_percentage: 0.09 },
+
+  // Maroc → Gabon
+  { from_country: 'MA', to_country: 'GA', payment_method: 'ORANGE_MONEY',  receiving_method: 'AIRTEL_MONEY', fee_percentage: 0.09 },
+  { from_country: 'MA', to_country: 'GA', payment_method: 'ORANGE_MONEY',  receiving_method: 'MOOV_MONEY',   fee_percentage: 0.09 },
+  { from_country: 'MA', to_country: 'GA', payment_method: 'ORANGE_MONEY',  receiving_method: 'CASH',         fee_percentage: 0.09 },
+
+  // Maroc → Sénégal
+  { from_country: 'MA', to_country: 'SN', payment_method: 'ORANGE_MONEY',  receiving_method: 'WAVE',         fee_percentage: 0.09 },
+
+  // Sénégal → Maroc
+  { from_country: 'SN', to_country: 'MA', payment_method: 'WAVE',          receiving_method: 'ORANGE_MONEY', fee_percentage: 0.09 },
+
+  // Maroc → France (direction de retour)
+  { from_country: 'MA', to_country: 'FR', payment_method: 'ORANGE_MONEY',  receiving_method: 'BANK_TRANSFER', fee_percentage: 0.09 },
+  { from_country: 'MA', to_country: 'FR', payment_method: 'ORANGE_MONEY',  receiving_method: 'WERO',          fee_percentage: 0.09 },
+  { from_country: 'MA', to_country: 'FR', payment_method: 'ORANGE_MONEY',  receiving_method: 'PAYPAL',        fee_percentage: 0.09 },
+
+  // Sénégal → France (direction de retour)
+  { from_country: 'SN', to_country: 'FR', payment_method: 'WAVE',          receiving_method: 'BANK_TRANSFER', fee_percentage: 0.09 },
+  { from_country: 'SN', to_country: 'FR', payment_method: 'WAVE',          receiving_method: 'WERO',          fee_percentage: 0.09 },
+  { from_country: 'SN', to_country: 'FR', payment_method: 'WAVE',          receiving_method: 'PAYPAL',        fee_percentage: 0.09 },
+
   // Gabon -> France
   { from_country: 'GA', to_country: 'FR', payment_method: 'AIRTEL_MONEY', receiving_method: 'BANK_TRANSFER', fee_percentage: 0.08 },
   { from_country: 'GA', to_country: 'FR', payment_method: 'CASH', receiving_method: 'BANK_TRANSFER', fee_percentage: 0.08 },
@@ -194,6 +252,16 @@ export const DEFAULT_TRANSFER_FEES = [
   { from_country: 'GA', to_country: 'NL', payment_method: 'CASH',         receiving_method: 'WERO',          fee_percentage: 0.08 },
   { from_country: 'GA', to_country: 'NL', payment_method: 'AIRTEL_MONEY', receiving_method: 'PAYPAL',        fee_percentage: 0.08 },
 
+
+  // Gabon → Sénégal
+  { from_country: 'GA', to_country: 'SN', payment_method: 'AIRTEL_MONEY',  receiving_method: 'WAVE',         fee_percentage: 0.09 },
+  { from_country: 'GA', to_country: 'SN', payment_method: 'MOOV_MONEY',    receiving_method: 'WAVE',         fee_percentage: 0.09 },
+  { from_country: 'GA', to_country: 'SN', payment_method: 'CASH',          receiving_method: 'WAVE',         fee_percentage: 0.09 },
+
+  // Sénégal → Gabon
+  { from_country: 'SN', to_country: 'GA', payment_method: 'WAVE',          receiving_method: 'AIRTEL_MONEY', fee_percentage: 0.09 },
+  { from_country: 'SN', to_country: 'GA', payment_method: 'WAVE',          receiving_method: 'MOOV_MONEY',   fee_percentage: 0.09 },
+  { from_country: 'SN', to_country: 'GA', payment_method: 'WAVE',          receiving_method: 'CASH',         fee_percentage: 0.09 },
 
   // Gabon -> Chine
   { from_country: 'GA', to_country: 'CN', payment_method: 'AIRTEL_MONEY', receiving_method: 'ALIPAY', fee_percentage: 0.085 },

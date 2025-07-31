@@ -85,10 +85,24 @@ function getTransferDirection(fromCountry: string, toCountry: string): TransferD
       'GB': 'GABON_TO_UK',
       'ES': 'GABON_TO_SPAIN',
       'IT': 'GABON_TO_ITALY',
-      'NL': 'GABON_TO_NETHERLANDS'
+      'NL': 'GABON_TO_NETHERLANDS',
+      'MA': 'GABON_TO_MOROCCO',
+      'SN': 'GABON_TO_SENEGAL'
     },
+    'MA': {
+      'GA': 'MOROCCO_TO_GABON',
+      'SN': 'MOROCCO_TO_SENEGAL',
+      'FR': 'MOROCCO_TO_FRANCE'
+  },
+   'SN': {
+    'GA': 'SENEGAL_TO_GABON',
+    'FR': 'SENEGAL_TO_FRANCE',
+    'MA': 'SENEGAL_TO_MOROCCO'
+  },
     'FR': {
-      'GA': 'FRANCE_TO_GABON'
+      'GA': 'FRANCE_TO_GABON',
+      'MA': 'FRANCE_TO_MOROCCO',
+      'SN': 'FRANCE_TO_SENEGAL'
     },
     'BE': {
       'GA': 'BELGIUM_TO_GABON'
@@ -393,6 +407,8 @@ export async function calculateTransferDetails(
         case 'SPAIN': return 'ES';
         case 'ITALY': return 'IT';
         case 'NETHERLANDS': return 'NL';
+        case 'MOROCCO': return 'MA';
+        case 'SENEGAL': return 'SN';
         default: throw new Error('Pays non valide dans la direction');
       }
     });
@@ -410,6 +426,10 @@ export async function calculateTransferDetails(
       case 'IT':
       case 'NL':
         fromCurrency = 'EUR';
+        break;
+      case 'MA':
+      case 'SN':
+        fromCurrency = fromCountry === 'MA' ? 'MAD' : 'XOF';
         break;
       case 'CH':
         fromCurrency = 'CHF';
@@ -438,6 +458,10 @@ export async function calculateTransferDetails(
       case 'IT':
       case 'NL':
         toCurrency = 'EUR';
+        break;
+      case 'MA':
+      case 'SN':
+        toCurrency = toCountry === 'MA' ? 'MAD' : 'XOF';
         break;
       case 'CH':
         toCurrency = 'CHF';

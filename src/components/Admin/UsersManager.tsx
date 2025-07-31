@@ -187,6 +187,8 @@ const UsersManager = () => {
                    user.country === 'ES' ? 'Espagne' :
                    user.country === 'IT' ? 'Italie' :
                    user.country === 'NL' ? 'Pays-Bas' :
+                   user.country === 'MA' ? 'Maroc' :
+                   user.country === 'SN' ? 'Sénégal' :
                    user.country}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">

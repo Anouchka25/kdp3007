@@ -37,7 +37,15 @@ const DIRECTIONS = [
   { value: 'ITALY_TO_GABON', label: 'Italie → Gabon' },
   { value: 'GABON_TO_ITALY', label: 'Gabon → Italie' },
   { value: 'NETHERLANDS_TO_GABON', label: 'Pays-Bas → Gabon' },
-  { value: 'GABON_TO_NETHERLANDS', label: 'Gabon → Pays-Bas' }
+  { value: 'GABON_TO_NETHERLANDS', label: 'Gabon → Pays-Bas' },
+  { value: 'FRANCE_TO_MOROCCO', label: 'France → Maroc' },
+  { value: 'MOROCCO_TO_FRANCE', label: 'Maroc → France' },
+  { value: 'FRANCE_TO_SENEGAL', label: 'France → Sénégal' },
+  { value: 'SENEGAL_TO_FRANCE', label: 'Sénégal → France' },
+  { value: 'GABON_TO_MOROCCO', label: 'Gabon → Maroc' },
+  { value: 'MOROCCO_TO_GABON', label: 'Maroc → Gabon' },
+  { value: 'MOROCCO_TO_SENEGAL', label: 'Maroc → Sénégal' },
+  { value: 'SENEGAL_TO_MOROCCO', label: 'Sénégal → Maroc' }
 ];
 
 const PromoCodesManager = () => {

@@ -9,6 +9,14 @@ const paymentMethods = [
     name: "Moov Money",
     logo: "/moov-money.png"
   },
+  {
+    name: "Orange Money",
+    logo: "/orange-money.png"
+  },
+  {
+    name: "Wave",
+    logo: "/wave.png"
+  },
   
   {
     name: "Virement Bancaire",
@@ -30,10 +38,10 @@ const paymentMethods = [
     name: "Alipay",
     logo: "/1000133611.6795ed4372fe81.90775491.png"
   },
-  {
-    name: "Bitcoin",
-    logo: "/bitcoin.png"
-  }
+  //{
+   // name: "Bitcoin",
+  //  logo: "/bitcoin.png"
+ // }
 ];
 
 const PaymentMethods = () => {

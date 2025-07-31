@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 const LegalNotice = () => {
   return (
     <div className="min-h-screen flex flex-col">
+     
       <main className="flex-grow">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <h1 className="text-3xl font-bold mb-8">Mentions Légales</h1>
@@ -37,7 +38,7 @@ const LegalNotice = () => {
               <li>
                 Par mail : 
                 <ul>
-                  <li>kundapay@gmail.com</li>
+                  <li>contact@kundapay.com</li>
                 </ul>
               </li>
               <li>Par courrier : 319 Route de la Chapelle, 76640 Cléville, France</li>

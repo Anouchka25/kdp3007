@@ -31,7 +31,7 @@ export default {
           },
         },
       },
-  animation: {
+      animation: {
         blink: 'blink 1s step-start infinite',
       },
       keyframes: {
@@ -45,4 +45,4 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-};
+}

@@ -154,7 +154,15 @@ const TransferRevenue = () => {
       'BELGIUM_TO_GABON': 'Belgique → Gabon',
       'GABON_TO_BELGIUM': 'Gabon → Belgique',
       'GERMANY_TO_GABON': 'Allemagne → Gabon',
-      'GABON_TO_GERMANY': 'Gabon → Allemagne'
+      'GABON_TO_NETHERLANDS': 'Gabon → Pays-Bas',
+      'FRANCE_TO_MOROCCO': 'France → Maroc',
+      'MOROCCO_TO_FRANCE': 'Maroc → France',
+      'FRANCE_TO_SENEGAL': 'France → Sénégal',
+      'SENEGAL_TO_FRANCE': 'Sénégal → France',
+      'GABON_TO_MOROCCO': 'Gabon → Maroc',
+      'MOROCCO_TO_GABON': 'Maroc → Gabon',
+      'MOROCCO_TO_SENEGAL': 'Maroc → Sénégal',
+      'SENEGAL_TO_MOROCCO': 'Sénégal → Maroc'
     };
     return directions[direction] || direction;
   };

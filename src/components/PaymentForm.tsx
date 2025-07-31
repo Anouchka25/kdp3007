@@ -58,10 +58,14 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
           <div className="mt-4 bg-blue-50 p-4 rounded-lg">
             <h4 className="font-medium text-blue-800 mb-2">Instructions de paiement Airtel Money</h4>
             <ol className="list-decimal pl-5 text-blue-700">
-            <li>Ouvrez l'application Airtel Money</li>
+            
+              
+              <li>Ouvrez l'application Airtel Money</li>
                <li>
                 Envoyez le montant  à payer à l'un des numéro&nbsp; ci-dessous :
-                <span className="font-medium">N° 1 : 074 18 60 37</span>
+                </li>
+                <li>
+                 <span className="font-medium">N° 1 : 074 18 60 37</span>
                 <button
                   onClick={() => copyToClipboard('074186037')}
                   className="ml-2 inline-flex items-center"
@@ -73,7 +77,8 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                     <Copy className="h-4 w-4 text-gray-500 hover:text-gray-700" />
                   )}
                 </button> - Anouchka MINKOUE OBAME
-<br />
+               </li>
+              <li>
                  <span className="font-medium">N° 2 :  074 24 07 47</span>
                 <button
                   onClick={() => copyToClipboard(' 074240747')}
@@ -87,6 +92,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
                   )}
                 </button> - SONIA OKOME
               </li>
+
               <li>
                 Partagez-nous la capture d'écran du dépot avec l'ID via notre messagerie WhatsApp sur le site.
               </li>
@@ -228,6 +234,70 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
       </a>
     </div>
   </div>
+        );
+
+      case 'ORANGE_MONEY':
+        return (
+          <div className="mt-4 bg-orange-50 p-4 rounded-lg">
+            <h4 className="font-medium text-orange-800 mb-2">Instructions de paiement Orange Money</h4>
+            <ol className="list-decimal pl-5 text-orange-700">
+              <li>Ouvrez l'application Orange Money</li>
+              <li>
+                Envoyez le montant à payer au numéro&nbsp;
+                <span className="font-medium">0770-962126</span>
+                <button
+                  onClick={() => copyToClipboard('0770962126')}
+                  className="ml-2 inline-flex items-center"
+                  aria-label="Copier le numéro Orange Money"
+                >
+                  {copied ? (
+                    <Check className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <Copy className="h-4 w-4 text-gray-500 hover:text-gray-700" />
+                  )}
+                </button>
+              </li>
+              <li>
+                Le compte est au nom de&nbsp;
+                <span className="font-medium">Sébastien</span>
+              </li>
+              <li>
+                Partagez-nous la capture d'écran du dépot avec la référence via notre messagerie WhatsApp sur le site.
+              </li>
+            </ol>
+          </div>
+        );
+
+      case 'WAVE':
+        return (
+          <div className="mt-4 bg-blue-50 p-4 rounded-lg">
+            <h4 className="font-medium text-blue-800 mb-2">Instructions de paiement Wave</h4>
+            <ol className="list-decimal pl-5 text-blue-700">
+              <li>Ouvrez l'application Wave</li>
+              <li>
+                Envoyez le montant à payer au numéro&nbsp;
+                <span className="font-medium">0772 15 38 67</span>
+                <button
+                  onClick={() => copyToClipboard('0772153867')}
+                  className="ml-2 inline-flex items-center"
+                  aria-label="Copier le numéro Wave"
+                >
+                  {copied ? (
+                    <Check className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <Copy className="h-4 w-4 text-gray-500 hover:text-gray-700" />
+                  )}
+                </button>
+              </li>
+              <li>
+                Le compte est au nom de&nbsp;
+                <span className="font-medium">NZITA MBOUKA Chrislène Belvie</span>
+              </li>
+              <li>
+                Partagez-nous la capture d'écran du dépot avec la référence via notre messagerie WhatsApp sur le site.
+              </li>
+            </ol>
+          </div>
         );
 
         case 'CARD':

@@ -37,7 +37,15 @@ const DIRECTIONS = [
   { value: 'ITALY_TO_GABON', label: 'Italie → Gabon' },
   { value: 'GABON_TO_ITALY', label: 'Gabon → Italie' },
   { value: 'NETHERLANDS_TO_GABON', label: 'Pays-Bas → Gabon' },
-  { value: 'GABON_TO_NETHERLANDS', label: 'Gabon → Pays-Bas' }
+  { value: 'GABON_TO_NETHERLANDS', label: 'Gabon → Pays-Bas' },
+  { value: 'FRANCE_TO_MOROCCO', label: 'France → Maroc' },
+  { value: 'MOROCCO_TO_FRANCE', label: 'Maroc → France' },
+  { value: 'FRANCE_TO_SENEGAL', label: 'France → Sénégal' },
+  { value: 'SENEGAL_TO_FRANCE', label: 'Sénégal → France' },
+  { value: 'GABON_TO_MOROCCO', label: 'Gabon → Maroc' },
+  { value: 'MOROCCO_TO_GABON', label: 'Maroc → Gabon' },
+  { value: 'MOROCCO_TO_SENEGAL', label: 'Maroc → Sénégal' },
+  { value: 'SENEGAL_TO_MOROCCO', label: 'Sénégal → Maroc' }
 ];
 
 const PAYMENT_METHODS = {
@@ -61,7 +69,15 @@ const PAYMENT_METHODS = {
   'ITALY_TO_GABON': ['CARD', 'PAYPAL'],
   'GABON_TO_ITALY': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
   'NETHERLANDS_TO_GABON': ['CARD', 'PAYPAL'],
-  'GABON_TO_NETHERLANDS': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH']
+  'GABON_TO_NETHERLANDS': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
+  'FRANCE_TO_MOROCCO': ['CARD', 'BANK_TRANSFER', 'PAYPAL', 'WERO'],
+  'MOROCCO_TO_FRANCE': ['ORANGE_MONEY'],
+  'FRANCE_TO_SENEGAL': ['CARD', 'BANK_TRANSFER', 'PAYPAL', 'WERO'],
+  'SENEGAL_TO_FRANCE': ['WAVE'],
+  'GABON_TO_MOROCCO': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
+  'MOROCCO_TO_GABON': ['ORANGE_MONEY'],
+  'MOROCCO_TO_SENEGAL': ['ORANGE_MONEY'],
+  'SENEGAL_TO_MOROCCO': ['WAVE']
 };
 
 const RECEIVING_METHODS = {
@@ -85,7 +101,15 @@ const RECEIVING_METHODS = {
   'ITALY_TO_GABON': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
   'GABON_TO_ITALY': ['BANK_TRANSFER', 'PAYPAL'],
   'NETHERLANDS_TO_GABON': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
-  'GABON_TO_NETHERLANDS': ['BANK_TRANSFER', 'PAYPAL']
+  'GABON_TO_NETHERLANDS': ['BANK_TRANSFER', 'PAYPAL'],
+  'FRANCE_TO_MOROCCO': ['ORANGE_MONEY'],
+  'MOROCCO_TO_FRANCE': ['BANK_TRANSFER', 'WERO', 'PAYPAL'],
+  'FRANCE_TO_SENEGAL': ['WAVE'],
+  'SENEGAL_TO_FRANCE': ['BANK_TRANSFER', 'WERO', 'PAYPAL'],
+  'GABON_TO_MOROCCO': ['ORANGE_MONEY'],
+  'MOROCCO_TO_GABON': ['AIRTEL_MONEY', 'MOOV_MONEY', 'CASH'],
+  'MOROCCO_TO_SENEGAL': ['WAVE'],
+  'SENEGAL_TO_MOROCCO': ['ORANGE_MONEY']
 };
 
 const METHOD_LABELS = {
@@ -100,7 +124,9 @@ const METHOD_LABELS = {
   'ACH': 'Virement ACH',
   'VISA_DIRECT': 'Visa Direct',
   'MASTERCARD_SEND': 'Mastercard Send',
-  'INTERAC': 'Virement Interac'
+  'INTERAC': 'Virement Interac',
+  'ORANGE_MONEY': 'Orange Money',
+  'WAVE': 'Wave'
 };
 
 const getDefaultPaymentMethod = (fromCountry: string, toCountry: string) => {
@@ -128,7 +154,9 @@ const getDirectionFromCountries = (fromCountry: string, toCountry: string): stri
     'GB': 'UK',
     'ES': 'SPAIN',
     'IT': 'ITALY',
-    'NL': 'NETHERLANDS'
+    'NL': 'NETHERLANDS',
+    'MA': 'MOROCCO',
+    'SN': 'SENEGAL'
   };
 
   return `${countryNameMap[fromCountry]}_TO_${countryNameMap[toCountry]}`;
